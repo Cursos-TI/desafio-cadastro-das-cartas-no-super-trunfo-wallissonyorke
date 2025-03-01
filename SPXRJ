@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <string.h>
+
+// Definir uma carta com os dados da cidade
+struct Carta {
+    char nome[50];
+    int populacao;
+    float area;
+    float pib;
+    int pontosTuristicos;
+};
+
+// Função para mostrar as informações de uma carta
+void mostrarCarta(struct Carta carta) {
+    printf("\nCidade: %s\n", carta.nome);
+    printf("População: %d\n", carta.populacao);
+    printf("Área: %.2f km²\n", carta.area);
+    printf("PIB: %.2f bilhões de reais\n", carta.pib);
+    printf("Pontos Turísticos: %d\n", carta.pontosTuristicos);
+}
+
+// Função para comparar duas cartas
+void compararCartas(struct Carta carta1, struct Carta carta2, int atributo) {
+    if (atributo == 1) {
+        if (carta1.populacao > carta2.populacao) printf("Jogador 1 venceu!\n");
+        else if (carta1.populacao < carta2.populacao) printf("Jogador 2 venceu!\n");
+        else printf("Empate!\n");
+    }
+    else if (atributo == 2) {
+        if (carta1.area > carta2.area) printf("Jogador 1 venceu!\n");
+        else if (carta1.area < carta2.area) printf("Jogador 2 venceu!\n");
+        else printf("Empate!\n");
+    }
+    else if (atributo == 3) {
+        if (carta1.pib > carta2.pib) printf("Jogador 1 venceu!\n");
+        else if (carta1.pib < carta2.pib) printf("Jogador 2 venceu!\n");
+        else printf("Empate!\n");
+    }
+    else if (atributo == 4) {
+        if (carta1.pontosTuristicos > carta2.pontosTuristicos) printf("Jogador 1 venceu!\n");
+        else if (carta1.pontosTuristicos < carta2.pontosTuristicos) printf("Jogador 2 venceu!\n");
+        else printf("Empate!\n");
+    }
+}
+
+int main() {
+    // Criar as cartas das cidades
+    struct Carta cidade1 = {"São Paulo", 12325000, 1521.11, 699.28, 50};
+    struct Carta cidade2 = {"Rio de Janeiro", 6748000, 1200.25, 300.50, 30};
+
+    // Mostrar as cartas
+    printf("Carta 1:\n");
+    mostrarCarta(cidade1);
+    printf("\nCarta 2:\n");
+    mostrarCarta(cidade2);
+
+    // Escolher o atributo para comparar
+    int atributo;
+    printf("\nEscolha um atributo para comparar:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("Digite o número do atributo: ");
+    scanf("%d", &atributo);
+
+    // Comparar as cartas com base no atributo escolhido
+    compararCartas(cidade1, cidade2, atributo);
+
+    return 0;
+}
