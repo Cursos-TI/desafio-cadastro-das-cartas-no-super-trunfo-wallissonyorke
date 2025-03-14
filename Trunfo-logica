@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    // Definindo as variáveis para as cidades e suas populações
+    char cidade1[] = "São Paulo";
+    char cidade2[] = "Rio de Janeiro";
+    int populacao1 = 12325232;  // População aproximada de São Paulo
+    int populacao2 = 6748000;   // População aproximada do Rio de Janeiro
+
+    // Exibindo as informações das duas cidades
+    printf("Cidade 1: %s\nPopulação: %d\n", cidade1, populacao1);
+    printf("Cidade 2: %s\nPopulação: %d\n", cidade2, populacao2);
+
+    // Comparando as populações e decidindo qual cidade "vence"
+    if (populacao1 > populacao2) {
+        printf("\nA cidade %s vence com a maior população (%d).\n", cidade1, populacao1);
+    } else if (populacao1 < populacao2) {
+        printf("\nA cidade %s vence com a maior população (%d).\n", cidade2, populacao2);
+    } else {
+        printf("\nAs duas cidades têm a mesma população (%d).\n", populacao1);
+    }
+
+    return 0;
+}
